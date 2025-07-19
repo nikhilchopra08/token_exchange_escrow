@@ -24,10 +24,10 @@ pub struct TakeOffer<'info> {
 
     #[account(
         init_if_needed,
-        payer = taker,
-        associated_token::mint = token_mint_a,
-        associated_token::authority = token_mint_b,
-        associated_token::token_program = token_program,
+        payer = taker, //who will create account
+        associated_token::mint = token_mint_a, //token to be minted
+        associated_token::authority = taker, // who will have access to the accoutn
+        associated_token::token_program = token_program, //normal program
     )]
     pub taker_token_account_a: Box<InterfaceAccount<'info, TokenAccount>>,
 
