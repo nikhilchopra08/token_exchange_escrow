@@ -11,7 +11,7 @@ pub fn transfer_tokens<'info> (
 ) -> Result<()> {
     let transfer_account_options = TransferChecked{
         from: from.to_account_info(),
-        mint: from.to_account_info(),
+        mint: mint.to_account_info(),
         to: to.to_account_info(),
         authority: authority.to_account_info(),
     };
